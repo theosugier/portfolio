@@ -1,14 +1,27 @@
+:root { /* mes couleurs, je change ici et ca change partout */
+    --fond: #0b0f17;
+    --fond-carte: #121826;
+    --bordure: #1f2937;
+    --texte: #d0d8e8;
+    --texte-doux: #8b95a7;
+    --accent: #4da3ff;
+    --bouton: #0066d6;
+}
+
 * { /* toutes les balises */
     box-sizing: border-box;
 }
 
 body { /* toute la page */
     margin: 0;
-    font-family: "Share Tech Mono", monospace;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #0f1624, #1a2742, #0f1624);
-    color: #d0d8e8;
-    
+    background: var(--fond);
+    color: var(--texte);
+}
+
+h1, h2, h3, .logo { /* police style terminal juste pour les titres */
+    font-family: "Share Tech Mono", monospace;
 }
 
 header { /* barre en haut page logo & menu  */
@@ -18,7 +31,8 @@ header { /* barre en haut page logo & menu  */
     justify-content: space-between; /* TS a gauche menu a droite */
     padding: 1rem;
     align-items: center; /* centre TS */
-    background-color: #0d1117;
+    background-color: var(--fond-carte);
+    border-bottom: 1px solid var(--bordure);
 }
 
 nav ul { /* bloc nav interieur */
@@ -32,21 +46,23 @@ nav ul { /* bloc nav interieur */
 }
 
 main {
+    max-width: 1100px; /* le texte s'etale plus sur tout l'ecran */
+    margin: 0 auto;
     padding: 1rem;
 }
 
 section {
     margin-bottom: 2rem;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--fond-carte);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--bordure);
 }
 
 .bouton-arrondi {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0066D6; /* bleu un peu plus fonce pour que le texte se lise bien */
+  background-color: var(--bouton); /* bleu un peu plus fonce pour que le texte se lise bien */
   color: white;
   text-decoration: none;
   border-radius: 8px; /* arrondit les coins */
@@ -83,7 +99,7 @@ h3 {
 footer {
     text-align: center;
     padding: 2rem;
-    color: #888;
+    color: var(--texte-doux);
 }
 
 
