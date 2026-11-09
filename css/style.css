@@ -1,0 +1,117 @@
+* { /* toutes les balises */
+    box-sizing: border-box;
+}
+
+body { /* toute la page */
+    margin: 0;
+    font-family: "Share Tech Mono", monospace;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #0f1624, #1a2742, #0f1624);
+    color: #d0d8e8;
+    
+}
+
+header { /* barre en haut page logo & menu  */
+    display: flex;
+    flex-direction: column; /* sur tel je met le logo au dessus du menu */
+    gap: 0.75rem;
+    justify-content: space-between; /* TS a gauche menu a droite */
+    padding: 1rem;
+    align-items: center; /* centre TS */
+    background-color: #0d1117;
+}
+
+nav ul { /* bloc nav interieur */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* si ya pas la place ca passe a la ligne */
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bouton-arrondi {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0066D6; /* bleu un peu plus fonce pour que le texte se lise bien */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px; /* arrondit les coins */
+  transition: background-color 0.3s;
+}
+
+.bouton-arrondi:hover {
+  background-color: #004A9E;
+}   
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+}
+
+
+img, video { /* pour que ca deborde pas */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.couverture { /* toutes les images de projet meme taille */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) { /* sur pc tout sur une ligne */
+    header {
+        flex-direction: row;
+        padding: 1rem 2rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+}
