@@ -133,7 +133,7 @@ img, video { /* pour que ca deborde pas */
     color: var(--texte-doux);
 }
 
-.petit-titre {
+.presentation .petit-titre { /* .presentation devant sinon le gris du paragraphe gagne */
     font-family: "Share Tech Mono", monospace;
     color: var(--accent);
     margin-bottom: 0.5rem;
