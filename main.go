@@ -56,6 +56,12 @@ func renderTemplate(w http.ResponseWriter, name string, data interface{}) {
 	buffer.WriteTo(w)
 }
 
+func HomeHandler(w http.ResponseWriter, r *http.Request) {
+	log.Printf("Request : %s %s", r.Method, r.URL.Path)
+
+	renderTemplate(w, "index", nil)
+}
+
 type Project struct {
 	Id          int
 	Title       string
@@ -69,3 +75,15 @@ type Project struct {
 }
 
 var listProjects []Project
+
+func ProjectsHandler(w http.ResponseWriter, r *http.Request) {
+	log.Printf("Request : %s %s", r.Method, r.URL.Path)
+
+	renderTemplate(w, "projects-list", listProjects)
+}
+
+func NotfoundHandler(w http.ResponseWriter, r *http.Request) {
+	log.Printf("Request : %s %s", r.Method, r.URL.Path)
+
+	renderTemplate(w, "error", nil)
+}
