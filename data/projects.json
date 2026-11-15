@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "title": "Projet RED - AUBEFER",
+        "image": "aubefer.png",
+        "stack": [
+            "Go",
+            "Git",
+            "Trello"
+        ],
+        "intro": "Jeu de rôle au tour par tour dans le terminal, codé en Go à trois pour le Projet RED d'Ynov.",
+        "description": "Projet RED, Ynov Campus Aix, B1 (septembre 2026). 10 jours, équipe de 3. Le sujet imposait 22 fonctions sans univers : on a inventé un camp d'entraînement militaire où chaque fonction devient un lieu ou un personnage.",
+        "features": [
+            "Création de personnage (Humain, Elfe ou Nain)",
+            "Inventaire, or et marchand",
+            "Combat au tour par tour, sorts et mana",
+            "Expérience et montée de niveau",
+            "Interface en ASCII art et couleurs ANSI"
+        ],
+        "repo": "https://github.com/theosugier/ProjetRed_Theo_Amine_Martim",
+        "video": ""
+    },
+    {
+        "id": 2,
+        "title": "Enixus AI",
+        "image": "enixus.jpg",
+        "stack": [
+            "Python",
+            "Claude",
+            "OCR"
+        ],
+        "intro": "Agents IA qui assurent le travail de bureau d'une Responsable Qualité dans un laboratoire accrédité : mails, documents, métrologie, audits. Utilisé au quotidien.",
+        "description": "ENIXUS, laboratoire d'analyses accrédité COFRAC (ISO 17025), avait un poste de Responsable Qualité vacant. J'ai développé un système d'agents IA qui prend en charge la partie administrative du poste, sous la validation du directeur. Utilisé tous les jours en conditions réelles depuis octobre 2026.",
+        "features": [
+            "7 agents spécialisés coordonnés par un chef d'orchestre : documentation, métrologie, audits, non-conformités, indicateurs, ressources, briefing",
+            "Lecture et tri des mails, lecture des pièces jointes avec OCR",
+            "Rédaction de documents Word, Excel et PowerPoint",
+            "Décisions présentées sous forme de cartes, validées par un humain",
+            "Interface web avec vue 3D du labo et assistant de discussion",
+            "Alertes sur téléphone et sauvegardes automatiques"
+        ],
+        "repo": "",
+        "video": ""
+    },
+    {
+        "id": 3,
+        "title": "Reverso",
+        "image": "leurre.jpg",
+        "stack": [
+            "Python",
+            "CustomTkinter",
+            "ChaCha20-Poly1305",
+            "Argon2id"
+        ],
+        "intro": "Outil de chiffrement desktop pour Windows. Chiffrement authentifié, dérivation de clé par passphrase ou clé USB, couche de camouflage stéganographique. 100% local, zéro réseau.",
+        "description": "Projet personnel. L'idée : chiffrer un message, puis le camoufler pour qu'il ressemble à un texte banal. Tout fonctionne en local, sans aucune connexion réseau, avec une clé USB comme clé physique.",
+        "features": [
+            "Chiffrement authentifié du message",
+            "Clé dérivée d'une phrase secrète ou d'une clé USB",
+            "Camouflage stéganographique : le message chiffré devient une phrase anodine",
+            "Coffre chiffré stocké en local",
+            "100 % hors ligne"
+        ],
+        "repo": "",
+        "video": "leurre.mp4"
+    }
+]
