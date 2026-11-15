@@ -41,6 +41,21 @@ func main() {
 	}
 }
 
+func renderTemplate(w http.ResponseWriter, name string, data interface{}) {
+	buffer := bytes.Buffer{}
+
+	errRender := _temp.ExecuteTemplate(&buffer, name, data)
+	if errRender != nil {
+		log.Printf("Erreur (Template) : Impossible de rendre le template %s : %v", name, errRender)
+		http.Error(w, "Erreur chargement de la page", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.WriteHeader(http.StatusOK)
+	buffer.WriteTo(w)
+}
+
 type Project struct {
 	Id          int
 	Title       string
