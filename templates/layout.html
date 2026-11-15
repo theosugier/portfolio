@@ -1,0 +1,33 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>{{.}}</title>
+</head>
+<body>
+    <header>
+        <a class="logo" href="/">~/theo</a>
+        <nav>
+            <ul>
+                <li><a class="bouton-arrondi" href="/">Accueil</a></li>
+                <li><a class="bouton-arrondi" href="/projects">Projets</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+{{end}}
+
+{{define "footer"}}
+    </main>
+    <footer>
+        <p>© 2026 Théo Sugier</p>
+    </footer>
+</body>
+</html>
+{{end}}
