@@ -12,6 +12,19 @@ import (
 
 var _temp = template.Must(template.ParseGlob("./templates/*.html"))
 
+func main() {
+	data, errFile := os.ReadFile("./data/projects.json")
+	if errFile != nil {
+		log.Fatalf("Erreur (JSON) : Impossible de lire le fichier : %v", errFile)
+		return
+	}
+	errJson := json.Unmarshal(data, &listProjects)
+	if errJson != nil {
+		log.Fatalf("Erreur (JSON) : Impossible de lire les projets : %v", errJson)
+		return
+	}
+}
+
 type Project struct {
 	Id          int
 	Title       string
