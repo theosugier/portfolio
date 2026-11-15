@@ -82,6 +82,24 @@ func ProjectsHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "projects-list", listProjects)
 }
 
+func ProjectByIdHandler(w http.ResponseWriter, r *http.Request) {
+	log.Printf("Request : %s %s", r.Method, r.URL.Path)
+
+	id, errId := strconv.Atoi(r.PathValue("id"))
+	if errId != nil {
+		http.Error(w, "Erreur données invalides...", http.StatusBadRequest)
+		return
+	}
+
+	for _, project := range listProjects {
+		if project.Id == id {
+			renderTemplate(w, "project-details", project)
+			return
+		}
+	}
+	http.Error(w, "Projet introuvable...", http.StatusNotFound)
+}
+
 func NotfoundHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Request : %s %s", r.Method, r.URL.Path)
 
