@@ -1,0 +1,43 @@
+{{define "project-details"}}
+{{template "header" .Title}}
+        <article>
+            <h1>{{.Title}}</h1>
+            <p>{{.Intro}}</p>
+
+            {{if .Video}}
+            <video controls autoplay muted loop playsinline width="480">
+                <source src="/static/img/{{.Video}}" type="video/mp4">
+                Votre navigateur ne lit pas les vidéos.
+            </video>
+            {{else}}
+            <img src="/static/img/{{.Image}}" alt="{{.Title}}">
+            {{end}}
+
+            <section>
+                <h2>Contexte</h2>
+                <p>{{.Description}}</p>
+            </section>
+
+            <section>
+                <h2>Fonctionnalités</h2>
+                <ul>
+                    {{range .Features}}<li>{{.}}</li>{{end}}
+                </ul>
+            </section>
+
+            <section>
+                <h2>Technologies</h2>
+                <ul class="tags">
+                    {{range .Stack}}<li>{{.}}</li>{{end}}
+                </ul>
+            </section>
+
+            {{if .Repo}}
+            <a class="bouton-arrondi" href="{{.Repo}}" target="_blank" rel="noopener">Voir le dépôt GitHub (nouvel onglet)</a>
+            {{else}}
+            <p>Code non publié</p>
+            {{end}}
+            <a class="bouton-contour" href="/projects">Retour à la liste</a>
+        </article>
+{{template "footer"}}
+{{end}}
