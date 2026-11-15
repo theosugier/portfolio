@@ -1,0 +1,18 @@
+{{define "projects-list"}}
+{{template "header" "Mes projets"}}
+        <h1>Mes projets</h1>
+        <div class="projets-liste">
+            {{range .}}
+            <article class="carte-projet">
+                <img class="couverture" src="/static/img/{{.Image}}" alt="{{.Title}}">
+                <h2>{{.Title}}</h2>
+                <p>{{.Intro}}</p>
+                <ul class="tags">
+                    {{range .Stack}}<li>{{.}}</li>{{end}}
+                </ul>
+                <a class="bouton-arrondi" href="/projects/{{.Id}}">Consulter le projet</a>
+            </article>
+            {{end}}
+        </div>
+{{template "footer"}}
+{{end}}
