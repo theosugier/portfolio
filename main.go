@@ -34,6 +34,11 @@ func main() {
 	fileServer := http.FileServer(http.Dir("./assets"))
 	router.Handle("/static/", http.StripPrefix("/static/", fileServer))
 
+	err := http.ListenAndServe("localhost:8080", router)
+	if err != nil {
+		log.Fatalf("Erreur (Serveur) : Impossible de lancer le serveur : %v", err)
+		return
+	}
 }
 
 type Project struct {
