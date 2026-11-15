@@ -23,6 +23,17 @@ func main() {
 		log.Fatalf("Erreur (JSON) : Impossible de lire les projets : %v", errJson)
 		return
 	}
+
+	router := http.NewServeMux()
+
+	router.HandleFunc("/{$}", HomeHandler)
+	router.HandleFunc("/projects", ProjectsHandler)
+	router.HandleFunc("/projects/{id}", ProjectByIdHandler)
+	router.HandleFunc("/", NotfoundHandler)
+
+	fileServer := http.FileServer(http.Dir("./assets"))
+	router.Handle("/static/", http.StripPrefix("/static/", fileServer))
+
 }
 
 type Project struct {
